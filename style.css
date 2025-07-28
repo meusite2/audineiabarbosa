@@ -60,7 +60,7 @@ img {
     .pagina_final .icon1 img{
     top:249%;
     width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
-    left: 24%; /* Centraliza horizontalmente */
+    left: 24.5%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     animation: pulse 1.5s infinite;
     }
