@@ -82,15 +82,15 @@ img {
 
     /* Ajustes para o botão "Agende" no modo PAISAGEM */
     .pagina_final .icon1 img{
-    top:262%;
-    width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
-    left: 22.5%; /* Centraliza horizontalmente */
+    top:682%;
+    width: 43%; /* Use porcentagem para largura, ajuste conforme necessário */  
+    left: 27.8%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     animation: pulse 1.5s infinite;
     }
 
     .pagina_final .icon2 img{
-    top:288%;
+    top:749%;
     width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
