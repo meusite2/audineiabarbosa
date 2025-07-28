@@ -58,15 +58,15 @@ img {
         display: flex; /* Garante que o corpo seja visível e flexível */
     }
     .pagina_final .icon1 img{
-    top:307%;
-    width: 55%; /* Use porcentagem para largura, ajuste conforme necessário */  
+    top:262%;
+    width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
     left: 22.5%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     animation: pulse 1.5s infinite;
     }
 
     .pagina_final .icon2 img{
-    top:337%;
+    top:288%;
     width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
@@ -81,20 +81,19 @@ img {
     }
 
     /* Ajustes para o botão "Agende" no modo PAISAGEM */
-    .agende {
-        width: 45%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
-        top: 95%; /* Posição vertical na imagem final (ajuste este valor!) */
-        left: 27%; /* Centraliza horizontalmente */
-        transform: translateX(-50%);
-        animation: pulse 1.5s infinite;
+    .pagina_final .icon1 img{
+    top:262%;
+    width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
+    left: 22.5%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    animation: pulse 1.5s infinite;
     }
 
-    /* Ajustes para o ícone "Instagram" no modo PAISAGEM */
-    .instagram {
-        width: 12%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
-        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%);
+    .pagina_final .icon2 img{
+    top:288%;
+    width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     }
 }
 
