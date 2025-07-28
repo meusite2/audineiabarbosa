@@ -29,8 +29,9 @@ img {
     max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do pai */
     height: auto; /* Mantém a proporção da imagem */
     display: block; /* Garante que as imagens se comportem como blocos e não tenham espaço extra */
-    vertical-align: top; /* Ajuda a remover pequenas lacunas abaixo de imagens */    
+    vertical-align: top; /* Ajuda a remover pequenas lacunas abaixo de imagens */
 }
+
 
 /* Estilos base para os overlays (botões) */
 .overlay {
@@ -57,21 +58,23 @@ img {
     body {
         display: flex; /* Garante que o corpo seja visível e flexível */
     }
-    .pagina_final .icon1 img{
-    top:244%;
-    width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
-    left: 24.5%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
-    animation: pulse 1.5s infinite;
+
+    /* Posição e tamanho para o botão "Agende" no modo retrato */
+    .agende {
+        width: 55%; /* Use porcentagem para largura, ajuste conforme necessário */
+        top: 62%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 22.5%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+        animation: pulse 1.5s infinite;
     }
 
-    .pagina_final .icon2 img{
-    top:267%;
-    width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    /* Posição e tamanho para o botão "Instagram" no modo retrato */
+    .instagram {
+        width: 18%; /* Use porcentagem para largura, ajuste conforme necessário */
+        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     }
-
 }
 
 /* Media Query para dispositivos móveis em modo PAISAGEM (smartphones e tablets pequenos) */
@@ -81,19 +84,20 @@ img {
     }
 
     /* Ajustes para o botão "Agende" no modo PAISAGEM */
-    .pagina_final .icon1 img{
-    top:822%;
-    width: 43%; /* Use porcentagem para largura, ajuste conforme necessário */  
-    left: 27.8%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
-    animation: pulse 1.5s infinite;
+    .agende {
+        width: 45%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
+        top: 65%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 27%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+        animation: pulse 1.5s infinite;
     }
 
-    .pagina_final .icon2 img{
-    top:902%;
-    width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    /* Ajustes para o ícone "Instagram" no modo PAISAGEM */
+    .instagram {
+        width: 12%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
+        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
     }
 }
 
