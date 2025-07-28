@@ -6,42 +6,37 @@
     box-sizing: border-box; /* Inclui padding e border nas larguras */
 }
 
+/* Garante que HTML e BODY ocupem 100% da largura e altura do viewport */
 html {
     width: 100%;
     height: 100%; /* Garante que o html ocupe a altura total do viewport */
-    overflow-x: hidden; /* Esconde qualquer barra de rolagem horizontal */
+    overflow-x: hidden; /* CRÍTICO: Esconde qualquer barra de rolagem horizontal e conteúdo que transborde */
 }
 
 body {
-    position: relative;
+    /* Por padrão, o corpo será flexível e centralizado, adequado para mobile-first */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
     width: 100%; /* Garante que o body ocupe 100% da largura do html */
     min-height: 100vh; /* Garante que o body tenha pelo menos a altura da viewport */
-    /* Removido display: flex do body aqui, pois os divs .img1, .img2, .img3 já ocupam 100vh cada */
+    /* overflow-x: hidden; já está no html, não precisa repetir aqui */
 }
 
-/* Estilos padrão para mobile (modo retrato será o padrão) */
-.img1, .img2, .img3 {
-    width: 100%;
-    height: 100vh; /* Cada div ocupa 100% da altura da tela */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; /* Garante que a imagem preencha o espaço */
-    margin-bottom: 0; /* Remove margens entre os divs */
-    /* border: 1px solid #ccc; /* Remova esta borda em produção */
+/* Estilo para todas as imagens para garantir que ocupem 100% da largura do seu contêiner */
+/* e mantenham sua proporção */
+img {
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do pai */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que as imagens se comportem como blocos e não tenham espaço extra */
+    vertical-align: top; /* Ajuda a remover pequenas lacunas abaixo de imagens */    
 }
 
-.img1 {
-    background-image: url(assets/1.png);
-}
-
-.img2 {
-    background-image: url(assets/2.png);
-}
-
-.img3 {
-    background-image: url(assets/3.png);
-    position: relative; /* ESSENCIAL: O container deve ser relative para que os filhos absolutos se posicionem em relação a ele */
-    /* Removido display: flex, flex-direction e justify-content aqui, pois os elementos internos (agende/instagram) serão posicionados com 'absolute' */
+/* Estilos base para os overlays (botões) */
+.overlay {
+    position: absolute; /* Posiciona os botões relativamente ao .pagina_final */
+    height: auto; /* Mantém a proporção da imagem do botão */
+    /* A largura, top e left serão definidos dentro das media queries usando porcentagens */
 }
 
 /* Definindo a animação pulsante */
@@ -57,64 +52,58 @@ body {
     }
 }
 
-/* Posicionamento e tamanho responsivo para 'agende' (padrão: mobile retrato) */
-.agende {
-    position: absolute;
-    width: 45%; /* Largura responsiva, 45% do .img3 */
-    max-width: 280px; /* Limita a largura máxima para não ficar muito grande em tablets */
-    height: auto; /* Mantém a proporção da imagem */
-    bottom: 5%; /* 5% da parte inferior do .img3 */
-    left: 5%; /* 5% da parte esquerda do .img3 */
-    
-    /* Animação */
-    animation-name: pulse;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-/* Posicionamento e tamanho responsivo para 'instagram' (padrão: mobile retrato) */
-.instagram {
-    position: absolute;
-    width: 45%; /* Largura responsiva, 45% do .img3 */
-    max-width: 280px; /* Limita a largura máxima */
-    height: auto; /* Mantém a proporção da imagem */
-    bottom: 5%; /* 5% da parte inferior do .img3 */
-    right: 5%; /* 5% da parte direita do .img3 */
-    /* Removido justify-content e margin-top/left fixos */
-}
-
-/* ---------------------------------------------------------------------- */
-/* Media Query para telas em MODO PAISAGEM (Landscape) */
-/* Aplica-se a dispositivos com largura maior que a altura, como tablets na horizontal */
-@media screen and (max-width: 992px) and (orientation: landscape) {
-    /* Ajustes para os divs principais se necessário, geralmente 100vh já é bom */
-    .img1, .img2, .img3 {
-        height: 100vh; /* Mantém a altura total da viewport */
+/* Media Query para dispositivos móveis em modo RETRATO (smartphones e tablets pequenos) */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        display: flex; /* Garante que o corpo seja visível e flexível */
     }
 
-    /* Ajustes para 'agende' em modo paisagem */
+    /* Posição e tamanho para o botão "Agende" no modo retrato */
     .agende {
-        width: 30%; /* Pode ser menor em paisagem para caber mais conteúdo */
-        max-width: 200px;
-        bottom: 8%; /* Um pouco mais acima */
-        left: 10%; /* Mais afastado da borda esquerda */
+        width: 55%; /* Use porcentagem para largura, ajuste conforme necessário */
+        top: 62%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 22.5%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+        animation: pulse 1.5s infinite;
     }
 
-    /* Ajustes para 'instagram' em modo paisagem */
+    /* Posição e tamanho para o botão "Instagram" no modo retrato */
     .instagram {
-        width: 30%; /* Menor em paisagem */
-        max-width: 200px;
-        bottom: 8%; /* Um pouco mais acima */
-        right: 10%; /* Mais afastado da borda direita */
+        width: 18%; /* Use porcentagem para largura, ajuste conforme necessário */
+        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     }
 }
 
-/* ---------------------------------------------------------------------- */
-/* Media Query para OCULTAR o site em telas de DESKTOP */
-/* Aplica-se a telas com largura mínima de 769px (pode ajustar este valor) */
+/* Media Query para dispositivos móveis em modo PAISAGEM (smartphones e tablets pequenos) */
+@media screen and (max-width: 992px) and (orientation: landscape) {
+    body {
+        display: flex; /* Garante que o corpo seja visível e flexível */
+    }
+
+    /* Ajustes para o botão "Agende" no modo PAISAGEM */
+    .agende {
+        width: 45%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
+        top: 65%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 27%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+        animation: pulse 1.5s infinite;
+    }
+
+    /* Ajustes para o ícone "Instagram" no modo PAISAGEM */
+    .instagram {
+        width: 12%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
+        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+    }
+}
+
+/* Media Query para telas maiores (desktops e tablets grandes) */
+/* Se a intenção é que a página seja apenas para mobile, você pode escondê-la aqui */
 @media screen and (min-width: 993px) {
     body {
-        display: none; /* Oculta todo o conteúdo do body para desktops */
+        display: none; /* Esconde o conteúdo em telas maiores */
     }
 }
