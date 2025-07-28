@@ -58,7 +58,7 @@ img {
         display: flex; /* Garante que o corpo seja visível e flexível */
     }
     .pagina_final .icon1 img{
-    top:249%;
+    top:244%;
     width: 50%; /* Use porcentagem para largura, ajuste conforme necessário */  
     left: 24.5%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
@@ -66,7 +66,7 @@ img {
     }
 
     .pagina_final .icon2 img{
-    top:273%;
+    top:267%;
     width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
@@ -82,7 +82,7 @@ img {
 
     /* Ajustes para o botão "Agende" no modo PAISAGEM */
     .pagina_final .icon1 img{
-    top:682%;
+    top:822%;
     width: 43%; /* Use porcentagem para largura, ajuste conforme necessário */  
     left: 27.8%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
@@ -90,7 +90,7 @@ img {
     }
 
     .pagina_final .icon2 img{
-    top:749%;
+    top:902%;
     width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
