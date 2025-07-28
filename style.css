@@ -57,23 +57,21 @@ img {
     body {
         display: flex; /* Garante que o corpo seja visível e flexível */
     }
-
-    /* Posição e tamanho para o botão "Agende" no modo retrato */
-    .agende {
-        width: 55%; /* Use porcentagem para largura, ajuste conforme necessário */
-        top: 62%; /* Posição vertical na imagem final (ajuste este valor!) */
-        left: 22.5%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
-        animation: pulse 1.5s infinite;
+    .pagina_final .icon1 img{
+    top:307%;
+    width: 55%; /* Use porcentagem para largura, ajuste conforme necessário */  
+    left: 22.5%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    animation: pulse 1.5s infinite;
     }
 
-    /* Posição e tamanho para o botão "Instagram" no modo retrato */
-    .instagram {
-        width: 18%; /* Use porcentagem para largura, ajuste conforme necessário */
-        top: 88%; /* Posição vertical na imagem final (ajuste este valor!) */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
+    .pagina_final .icon2 img{
+    top:337%;
+    width: 16%; /* Use porcentagem para largura, ajuste conforme necessário */        
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centralizar perfeitamente */
     }
+
 }
 
 /* Media Query para dispositivos móveis em modo PAISAGEM (smartphones e tablets pequenos) */
@@ -85,7 +83,7 @@ img {
     /* Ajustes para o botão "Agende" no modo PAISAGEM */
     .agende {
         width: 45%; /* Ajuste a largura para o modo paisagem, ainda em porcentagem */
-        top: 65%; /* Posição vertical na imagem final (ajuste este valor!) */
+        top: 95%; /* Posição vertical na imagem final (ajuste este valor!) */
         left: 27%; /* Centraliza horizontalmente */
         transform: translateX(-50%);
         animation: pulse 1.5s infinite;
