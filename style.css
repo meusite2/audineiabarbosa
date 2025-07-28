@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/* Estilos globais e reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border nas larguras */
+}
+
+/* Garante que HTML e BODY ocupem 100% da largura e altura do viewport */
+html {
+    width: 100%;
+    height: 100%; /* Garante que o html ocupe a altura total do viewport */
+    overflow-x: hidden; /* CRÍTICO: Esconde qualquer barra de rolagem horizontal e conteúdo que transborde */
+}
+
+body {
+    position: relative;
+    /* Por padrão, o corpo será flexível e centralizado, adequado para mobile-first */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    width: 100%; /* Garante que o body ocupe 100% da largura do html */
+    min-height: 100vh; /* Garante que o body tenha pelo menos a altura da viewport */
+    /* overflow-x: hidden; já está no html, não precisa repetir aqui */
+}
+
+.img1, .img2, .img3 {
+    /* Defina uma largura e altura para os seus divs */
+    width: 100%; /* Exemplo de largura */
+    height: 100vh; /* Exemplo de altura */
+    
+    /* Para garantir que a imagem preencha o espaço e não se repita */
+    background-repeat: no-repeat;
+    background-position: center center; /* Centraliza a imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço, cortando se necessário */
+    /* Ou background-size: contain; para garantir que a imagem inteira seja visível, sem cortes */
+    
+    /* Adicione uma margem para separar os divs, se desejar */
+    margin-bottom: 0px;
+    border: 1px solid #ccc; /* Apenas para visualizar os limites dos divs */
+}
+
+/* Você pode manter os seletores específicos para cada imagem */
+.img1 {
+    background-image: url(assets/1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.img2 {
+    background-image: url(assets/2.png); /* Use background-image para clareza, ou background como shorthand */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.img3 {
+  
+    background-image: url(assets/3.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex; /* Transforma .img3 em um container flexível */
+    flex-direction: row;
+    justify-content: center;
+}
+
+.agende{
+    position: absolute;    
+    margin-top: 720px;
+    width: 300px;
+    left: 190px;
+    animation-name: pulse; /* Nome da animação que você definiu */
+    animation-duration: 1.5s; /* Duração de uma repetição da animação (ex: 1.5 segundos) */
+    animation-iteration-count: infinite; /* Quantas vezes a animação deve se repetir (infinite para sempre) */
+    animation-timing-function: ease-in-out; /* Como a animação acelera/desacelera (suave no início e fim) */
+}
+.instagram{
+    position: absolute;
+    margin-top:  980px;
+   justify-content: center;
+   left: 300px;
+   
+}
+
+
+/* Definindo a animação pulsante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta 10% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Query para dispositivos móveis em modo RETRATO (smartphones e tablets pequenos) */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        display: flex; /* Garante que o corpo seja visível e flexível */
+    }
+
+}
+
+/* Media Query para dispositivos móveis em modo PAISAGEM (smartphones e tablets pequenos) */
+@media screen and (max-width: 992px) and (orientation: landscape) {
+    body {
+        display: flex; /* Garante que o corpo seja visível e flexível */
+    }
+
+}
+
+/* Media Query para telas maiores (desktops e tablets grandes) */
+/* Se a intenção é que a página seja apenas para mobile, você pode escondê-la aqui */
+@media screen and (min-width: 993px) {
+    body {
+        display: none; /* Esconde o conteúdo em telas maiores */
+    }
+}
