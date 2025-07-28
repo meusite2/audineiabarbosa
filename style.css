@@ -87,7 +87,7 @@ body {
 /* ---------------------------------------------------------------------- */
 /* Media Query para telas em MODO PAISAGEM (Landscape) */
 /* Aplica-se a dispositivos com largura maior que a altura, como tablets na horizontal */
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 992px) and (orientation: landscape) {
     /* Ajustes para os divs principais se necessário, geralmente 100vh já é bom */
     .img1, .img2, .img3 {
         height: 100vh; /* Mantém a altura total da viewport */
